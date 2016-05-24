@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>Mr. T’s Log In / Log Out Page</title>
+  <script type="text/javascript" src="loginout.js"></script>
+  <style type="text/css">
+    /* colour scheme inspired by http://www.colorschemer.com/schemes/viewscheme.php?id=9810 "Crime in the street" */
+    /*html { border: 10px solid #999; }*/
+    body { font-family: 'Trebuchet MS', Verdana, Helvetica, Geneva, sans-serif; 
+      color: #000; background-color: #B4B0B1; /*#FDF9FA #E8B36D #ffe;*/
+      margin-left: 4em; margin-right: 4em;
+    }
+
+    h1, blockquote {
+      background-color: #B70608;
+      color: #FFF;
+      font-family: 'Stencil Regular', Army, Elephant, Georgia, serif; 
+      letter-spacing: 0.05em;
+      padding: 0.5em;
+      /*text-align: center;*/
+    }
+    #mrtname { font-size: 2.5em; }
+
+    button { 
+      padding-right: 4px; padding-left: 4px; 
+    }
+
+    iframe {
+      margin-top: 2px; margin-bottom: 2px; padding: 0; 
+      width: 100%;
+    } 
+    iframe p, iframe * { background-color: white; color: black; }
+    iframe p.frametemp { background-color: white; color: #666; }
+    iframe#result, 
+    iframe#prefset { border: 4px solid #666062; }
+    iframe#prefset.error, 
+    iframe#prefset.error { border: 4px solid #790102; }
+
+    .hide { display: none; }
+    blockquote {
+      padding-top: 0.1em;
+    }
+    blockquote p.quote:before {
+      display: inline;
+      content: "\201C";
+      font-size: 80px;
+      color: #FFF;
+    }
+    blockquote cite:before {
+      content: "\2014 \2009";
+    }
+  </style>
+</head>
+
+<body>
+<h1><span id="mrtname">Mr. T’s</span> Log In / Log Out Page</h1>
+
+<p>Hey man, you can use this page to call the log in and log out <abbr>URL</abbr>s for a
+preference set, instead of typing those URLs in the browser’s <abbr>URL</abbr>
+bar.</p>
+
+<form action="LogInLogOut.html" method="get">
+  <p><label for="token">Token: </label> <input id="token" name="token"
+  type="text" /> <button id="loginbutton">Log in</button> <button
+  id="logoutbutton">Log out</button> 
+  <input type="reset" value="Reset" id="reset" name="Reset" /></p>
+</form>
+
+<h2>Log In / Log Out Result <span id="resultlinkcontainer" class="hide"></span> </h2>
+<iframe id="result" name="result" src="LogInLogOutMrT.html"
+title="Result of the log in or log out action">
+<p class="frametemp">The result of the log in / log out action.</p>
+</iframe>
+
+
+<h2>Preference Set (<abbr>GPII</abbr>) <span id="preflinkcontainer" class="hide"></span></h2>
+<iframe id="prefset" name="prefset" src="LogInLogOutMrT.html"
+title="The preference set">
+<p class="frametemp">The preference set on the public Preferences Server. <br />
+Note: Opera will ask you to download the preference set 
+instead of showing it inside the <code>iframe</code>.</p>
+</iframe>
+
+<h2>Preference Set (local) <span id="preflinkcontainerlocal" class="hide"></span></h2>
+<iframe id="prefsetlocal" name="prefsetlocal" src="LogInLogOutMrT.html"
+title="The preference set">
+<p class="frametemp">The preference set (local version). <br />
+Note: Opera will ask you to download the preference set 
+instead of showing it inside the <code>iframe</code>.</p>
+</iframe>
+
+
+<h2>Logged In Token(s)</h2>
+<p><button id="getTokensButton">Show logged in tokens</button></p>
+<iframe id="loggedintokens" name="loggedintokens" src="LogInLogOutMrT.html"
+title="The logged in tokens">
+<p class="frametemp">The list of locally logged in tokens.</p>
+</iframe>
+
+
+
+<blockquote id="MrTQuote">
+  <p class="quote">I ain&rsquo;t going to no airport, Hannibal. I don&rsquo;t fly with that crazy fool Murdock. If he&rsquo;s flyin&rsquo;, then we&rsquo;re dyin&rsquo;.</p>
+  <p class="cite"><cite>&ldquo;B.A.&rdquo; Baracus</cite></p>
+</blockquote>
+</body>
+</html>
