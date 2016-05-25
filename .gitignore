@@ -1,2 +1,5 @@
 *.marks
 *.js~1~
+*.css~1~
+*.html~1~
+*.url

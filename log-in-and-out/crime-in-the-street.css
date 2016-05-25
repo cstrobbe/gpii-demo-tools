@@ -1,0 +1,45 @@
+/* colour scheme inspired by http://www.colorschemer.com/schemes/viewscheme.php?id=9810 "Crime in the street" */
+/*html { border: 10px solid #999; }*/
+body { font-family: 'Trebuchet MS', Verdana, Helvetica, Geneva, sans-serif; 
+  color: #000; background-color: #B4B0B1; /*#FDF9FA #E8B36D #ffe;*/
+  margin-left: 4em; margin-right: 4em;
+}
+
+h1, blockquote {
+  background-color: #B70608;
+  color: #FFF;
+  font-family: 'Stencil Regular', Army, Elephant, Georgia, serif; 
+  letter-spacing: 0.05em;
+  padding: 0.5em;
+  /*text-align: center;*/
+}
+#mrtname { font-size: 2.5em; }
+
+button { 
+  padding-right: 4px; padding-left: 4px; 
+}
+
+iframe {
+  margin-top: 2px; margin-bottom: 2px; padding: 0; 
+  width: 100%;
+} 
+iframe p, iframe * { background-color: white; color: black; }
+iframe p.frametemp { background-color: white; color: #666; }
+iframe#result, 
+iframe#prefset { border: 4px solid #666062; }
+iframe#prefset.error, 
+iframe#prefset.error { border: 4px solid #790102; }
+
+.hide { display: none; }
+blockquote {
+  padding-top: 0.1em;
+}
+blockquote p.quote:before {
+  display: inline;
+  content: "\201C";
+  font-size: 80px;
+  color: #FFF;
+}
+blockquote cite:before {
+  content: "\2014 \2009";
+}
