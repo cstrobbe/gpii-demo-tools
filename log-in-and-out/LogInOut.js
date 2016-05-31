@@ -150,7 +150,7 @@ var loginout = {
 
 
     /** 
-     * Log in the "user" with the token in the input field.
+     * Log in the "user" identified by the token in the input field.
      * @author Christophe Strobbe (HdM)
      */
     logInToken: function() {
@@ -190,7 +190,7 @@ var loginout = {
         resultSpan.setAttribute("class", this.showClass);
 
         // display the preference set in the iframe //@@TODO refactor
-        prefsetFrame = document.getElementById("prefset"); // We lazily assume that this is an iframe; @@TODO check the element type
+        prefsetFrame = loginout.findElementById("iframe", "prefset");
         prefsetFrame.setAttribute("src", prefSetUrl);
         //@@TODO add a check whether the server returns 200, 404 or something else
 
@@ -203,12 +203,12 @@ var loginout = {
         prefsetSpan.setAttribute("class", this.showClass);
 
         // display the result of the log-in action in the other iframe
-        resultFrame = document.getElementById("result"); // We lazily assume that this is an iframe; @@TODO check the element type
+        resultFrame = loginout.findElementById("iframe", "result");
         resultFrame.setAttribute("src", loginUrl);
         //@@TODO add a check whether the server returns 200, 404 or something else
 
         // display the preference set in the iframe //@@TODO refactor
-        prefsetFrameLocal = document.getElementById("prefsetlocal"); // We lazily assume that this is an iframe; @@TODO check the element type
+        prefsetFrameLocal = loginout.findElementById("iframe", "prefsetlocal");
         prefSetUrlLocal = this.getLocalPrefsUrlStart + token;
         prefsetFrameLocal.setAttribute("src", prefSetUrlLocal);
         //@@TODO add a check whether the server returns 200, 404 or something else
@@ -225,7 +225,7 @@ var loginout = {
 
 
     /** 
-     * Log out the "user" with the token in the input field.
+     * Log out the "user" identified by the token in the input field.
      * @author Christophe Strobbe (HdM)
      */
     logOutToken: function() {
@@ -251,13 +251,13 @@ var loginout = {
         // create the logout URL
         logoutUrl = this.logInUrlStart + token + logoutUrlEnd; //@@TODO refactor
         // display the preference set in the iframe //@@TODO refactor
-        prefsetFrame = document.getElementById("prefset"); // We lazily assume that this is a frame or iframe; @@TODO check the element type
+        prefsetFrame = loginout.findElementById("iframe", "prefset");
         prefsetFrame.setAttribute("src", prefSetUrl);
         
         // create the URL for the preference set (local)
         prefSetUrl = this.logInUrlStart + token; //@@TODO refactor
         // display the local preference set in the iframe //@@TODO refactor
-        prefsetFrame = document.getElementById("prefsetlocal"); // We lazily assume that this is a frame or iframe; @@TODO check the element type
+        prefsetFrame = loginout.findElementById("iframe", "prefsetlocal");
         prefsetFrame.setAttribute("src", prefSetUrl);
 
 
@@ -273,7 +273,7 @@ var loginout = {
         resultSpan.setAttribute("class", this.showClass);
 
         // display the result of the log-out action in the other iframe
-        resultFrame = document.getElementById("result"); // We lazily assume that this is a frame or iframe; @@TODO check the element type
+        resultFrame = loginout.findElementById("iframe", "result");
         resultFrame.setAttribute("src", logoutUrl);
         //@@TODO add a check whether the server returns 200, 404 or something else
         
@@ -299,13 +299,13 @@ var loginout = {
         tokenField = document.getElementById("token");
         tokenField.value = "";
         // reset the result frame to its original source / url
-        resultFrame = document.getElementById("result"); // We lazily assume that this is a frame or iframe; @@TODO check the element type
+        resultFrame = loginout.findElementById("iframe", "result");
         resultFrame.setAttribute("src", oldFrameSrc);
         // reset the preference set frame (GPII) to its original source / url
-        prefsetFrame = document.getElementById("prefset"); // We lazily assume that this is a frame or iframe; @@TODO check the element type
+        prefsetFrame = loginout.findElementById("iframe", "prefset");
         prefsetFrame.setAttribute("src", oldFrameSrc);
         // reset the preference set frame (local) to its original source / url
-        prefsetFrame = document.getElementById("prefsetlocal"); // We lazily assume that this is a frame or iframe; @@TODO check the element type
+        prefsetFrame = loginout.findElementById("iframe", "prefsetlocal");
         prefsetFrame.setAttribute("src", oldFrameSrc);
         // reset the tokens frame to its original source / url
         tokensFrame = document.getElementById("loggedintokens");
@@ -346,8 +346,24 @@ var loginout = {
 
         tokensFrame = document.getElementById("loggedintokens");
         tokensFrame.setAttribute("src", loginout.getTokensUrl);
-    }//,
+    },
 
+
+    /**
+     * Find an element type with a specific ID. Returns null if the elementType or the ID do not match what is needed.
+     * @author Christophe Strobbe (HdM)
+     */
+    findElementById: function(elementType, elementId) {
+        "use strict";
+        var tmp,
+            found = null;
+
+        tmp = document.getElementById(elementId);
+        if (tmp && (tmp.nodeName.toLowerCase() == elementType)) {
+            found = tmp;
+        }
+        return found;
+    }//,
 };
 
 
