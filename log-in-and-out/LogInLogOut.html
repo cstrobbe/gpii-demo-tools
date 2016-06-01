@@ -13,47 +13,46 @@
 <h1><span id="mrtname">Mr. T’s</span> Log In / Log Out Page</h1>
 
 <p>Hey man, you can use this page to call the log in and log out <abbr>URL</abbr>s for a
-preference set, instead of typing those URLs in the browser’s <abbr>URL</abbr>
-bar.</p>
+  preference set, instead of typing those <abbr>URL</abbr>s in the browser’s <abbr>URL</abbr> bar.
+</p>
 
 <form action="LogInLogOut.html" method="get">
-  <p><label for="token">Token: </label> <input id="token" name="token"
-  type="text" /> <button id="loginbutton">Log in</button> <button
-  id="logoutbutton">Log out</button> 
-  <input type="reset" value="Reset" id="reset" name="Reset" /></p>
+  <p>
+    <label for="token">Token: </label> 
+    <input id="token" name="token" type="text" /> 
+    <button id="loginbutton">Log in</button> 
+    <button id="logoutbutton">Log out</button> 
+    <input type="reset" value="Reset" id="reset" name="Reset" /></p>
 </form>
 
 <h2>Log In / Log Out Result <span id="resultlinkcontainer" class="hide"></span> </h2>
-<iframe id="result" name="result" src="LogInLogOutMrT.html"
-title="Result of the log in or log out action">
-<p class="frametemp">The result of the log in / log out action.</p>
+<iframe id="result" name="result" src="LogInLogOutMrT.html" title="Result of the log in or log out action">
+  <p class="frametemp">The result of the log in / log out action.</p>
 </iframe>
 
 
+<div style="display: none;">
 <h2>Preference Set (<abbr>GPII</abbr>) <span id="preflinkcontainer" class="hide"></span></h2>
-<iframe id="prefset" name="prefset" src="LogInLogOutMrT.html"
-title="The preference set">
-<p class="frametemp">The preference set on the public Preferences Server. <br />
-Note: Opera will ask you to download the preference set 
-instead of showing it inside the <code>iframe</code>.</p>
+<iframe id="prefset" name="prefset" src="LogInLogOutMrT.html" title="The preference set">
+  <p class="frametemp">The preference set on the public Preferences Server. <br />
+  Note: Opera will ask you to download the preference set 
+  instead of showing it inside the <code>iframe</code>.</p>
 </iframe>
+</div>
 
 <h2>Preference Set (local) <span id="preflinkcontainerlocal" class="hide"></span></h2>
-<iframe id="prefsetlocal" name="prefsetlocal" src="LogInLogOutMrT.html"
-title="The preference set">
-<p class="frametemp">The preference set (local version). <br />
-Note: Opera will ask you to download the preference set 
-instead of showing it inside the <code>iframe</code>.</p>
+<iframe id="prefsetlocal" name="prefsetlocal" src="LogInLogOutMrT.html" title="The preference set">
+  <p class="frametemp">The preference set (local version). <br />
+  Note: Opera will ask you to download the preference set 
+  instead of showing it inside the <code>iframe</code>.</p>
 </iframe>
 
 
 <h2>Logged In Token(s)</h2>
 <p><button id="getTokensButton">Show logged in tokens</button></p>
-<iframe id="loggedintokens" name="loggedintokens" src="LogInLogOutMrT.html"
-title="The logged in tokens">
-<p class="frametemp">The list of locally logged in tokens.</p>
+<iframe id="loggedintokens" name="loggedintokens" src="LogInLogOutMrT.html" title="The logged in tokens">
+  <p class="frametemp">The list of locally logged in tokens.</p>
 </iframe>
-
 
 
 <blockquote id="MrTQuote">
